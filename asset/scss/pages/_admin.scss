@@ -1,0 +1,30 @@
+
+
+$text-color: green;
+
+@mixin underline($bg) {
+    position: relative;
+    text-decoration: none;
+    color: inherit;
+  
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 1px; 
+      width: 0%;
+      height: 2px; 
+      background-color: $bg;
+      transition: width 0.3s ease; 
+    }
+  
+    &:hover::before {
+      width: 100%; 
+    }
+}
+
+.underline_hover {
+    color: $text-color !important;
+    @include underline($text-color);
+}
+

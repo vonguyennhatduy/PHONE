@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>Phone Shopping</title>
+        <!-- Required meta tags -->
+        <meta charset="utf-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1, shrink-to-fit=no"
+        />
+
+        <link
+        rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous"
+        />
+
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="../../asset/css/main.css">
+
+
+    </head>
+
+    <body>
+
+        <header>
+            <nav class="navbar navbar-expand-lg bg-body-tertiary black" style="background-color: rgba(0,0,0,0.3) !important; width: 100%;">
+                <div class="container-fluid pl-5 ml-5">
+                    <a class="navbar-brand" href="#">
+                    <i class="fa fa-robot" style="color: green;">
+                        PHONEEE
+                    </i>
+                    </a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav">
+                        <a class="nav-link active mx-5 underline_hover" aria-current="page" href="#">Home</a>
+                        <a class="nav-link underline_hover" href="#">Customer Page</a>
+                    </div>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        
+        <div class="container mt-5">
+            <!-- DANH SÁCH SẢN PHẨM TRANG ADMIN  -->
+            <ul class="nav nav-tabs" role="tablist">
+              <li class="nav-item">
+                <a
+                  class="nav-link active"
+                  href="#DanhSachSP"
+                  role="tab"
+                  data-toggle="tab"
+                  >Danh sách sản phẩm</a
+                >
+              </li>
+              
+            </ul>
+            <br />
+            
+            <div class="tab-content">
+              <!--Danh sách sản phẩm -->
+              <div role="tabpanel" class="tab-pane  in active" id="DanhSachSP">
+                <div class="row">
+                  <div class="col-md-8">
+                    <!-- BEGIN BUTTOM THÊM MỚI -->
+                    <button
+                      id="btnThemSP"
+                      class="btn btn-success"
+                      data-toggle="modal"
+                      data-target="#myModal"
+                    >
+                      <i class="fa fa-plus mr-1"></i>
+                      ADD PHONE
+                    </button>
+                    <!-- END BUTTON THÊM MỚI -->
+                  </div>
+                  <div class="col-md-4">
+                    <!-- BEGIN TÌM KIẾM -->
+                    <div class="input-group mb-3">
+                      <input
+                        type="text"
+                        class="form-control"
+                        placeholder="Nhập từ khóa"
+                        aria-label="Recipient's username"
+                        aria-describedby="basic-addon2"
+                      />
+                      <div class="input-group-append">
+                        <span class="input-group-text" id="basic-addon2"
+                          ><i class="fa fa-search"></i
+                        ></span>
+                      </div>
+                    </div>
+                    <!-- END TÌM KIẾM -->
+                  </div>
+                </div>
+                <div class="clear-fix"></div>
+                <div class="tblSanPham" id="tblSanPham">
+                  <!-- BEGIN TABLE SẢN PHẨM -->
+                  <table class="table table-bordered">
+                    <thead>
+                      <th>#</th>
+                      <th>NAME</th>
+                      <th>PRICE</th>
+                      <th>IMAGE</th>
+                      <th>DESCRIPTION</th>
+                      <th>TYPE</th>
+                    </thead>
+                    <tbody id="tblDanhSachSP"></tbody>
+                  </table>
+                  <!-- END TABLE SẢN PHẨM -->
+                </div>
+                <br />
+              </div>
+              <!-- Kết thúc danh sách sản phẩm -->       
+            </div>
+      
+            <!--KetThuc Tabmenu-->
+      
+            <!-- The Modal -->
+            <div class="modal fade" id="myModal">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <!-- Modal Header -->
+                  <div class="modal-header">
+                    <h4 class="modal-title">ADD PHONE</h4>
+                    <button type="button" class="close" data-dismiss="modal">
+                      &times;
+                    </button>
+                  </div>
+                  <!-- Modal body -->
+                  <div class="modal-body">
+                    <div class="form-group">
+                      <label>Phone Name</label>
+                      <input
+                        
+                        id="phoneName"
+                        class="form-control"
+                        placeholder="Phone Name"
+                      />
+                    </div>
+                    <div class="form-group">
+                      <label>Price</label>
+                      <input
+                       
+                        id="price"
+                        class="form-control"
+                        placeholder="Price"
+                      />
+                    </div>
+                    <span id="validatePrice"></span>      
+                    <div class="form-group">
+                      <label>Screen</label>
+                      <input
+                        
+                        id="screen"
+                        class="form-control"
+                        placeholder="Screen"
+                      />
+                    </div>
+                    <div class="form-group">
+                      <label>Back Camera</label>
+                      <input
+                       
+                        id="backCamera"
+                        class="form-control"
+                        placeholder="Back Camera"
+                      />
+                    </div>
+                    <div class="form-group">
+                      <label>Front Camera</label>
+                      <input
+                        
+                        id="frontCamera"
+                        class="form-control"
+                        placeholder="Front Camera"
+                      />
+                    </div>
+                    <div class="form-group">
+                      <label>Image</label>
+                      <input
+                       
+                        id="image"
+                        class="form-control"
+                        placeholder="Image link"
+                      />
+                    </div>
+                    <div class="form-group">
+                      <label for="">Brand: </label>
+                      <select class="form-control" id="brand">
+                        <option value="select">Select Brand</option>
+                        <option value="apple">Iphone</option>
+                        <option value="samsung">Samsung</option>
+                      </select>
+                    </div>
+                    <div class="form-group">
+                      <label for="">Mô tả </label>
+                      <textarea class="form-control" id="moTaSP">
+                        
+                      </textarea>
+                    </div>
+                  </div>
+                  <!-- Modal footer -->
+                  <div class="modal-footer" id="modal-footer"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        
+        <div id="container"></div>
+        <style>
+        #container {
+            min-width: 310px;
+            max-width: 800px;
+            height: 400px;
+            margin: 0 auto;
+        }
+        </style>
+
+
+        <script
+            src="https://code.jquery.com/jquery-3.3.1.min.js"
+            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+            crossorigin="anonymous"
+        ></script>
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"
+        ></script>
+        <script
+            src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"
+        ></script>
+        <script src="https://code.highcharts.com/highcharts.js"></script>
+        <script src="https://code.highcharts.com/modules/series-label.js"></script>
+        <script src="https://code.highcharts.com/modules/exporting.js"></script>
+
+        <script
+                src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+                integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+                crossorigin="anonymous"
+        ></script>
+
+        <!-- axios -->
+        <!-- <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script> -->
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.7/axios.min.js" integrity="sha512-NQfB/bDaB8kaSXF8E77JjhHG5PM6XVRxvHzkZiwl3ddWCEPBa23T76MuWSwAJdMGJnmQqM0VeY9kFszsrBEFrQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        
+        <script type="module" src="../controller/mainAdmin.js"></script>
+        
+    </body>
+</html>
