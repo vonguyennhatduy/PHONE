@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
     <head>
-        <title>Phone Shopping</title>
+        <title>Phone Shopping Admin</title>
         <!-- Required meta tags -->
         <meta charset="utf-8" />
         <meta
@@ -29,7 +29,7 @@
             <nav class="navbar navbar-expand-lg bg-body-tertiary black" style="background-color: rgba(0,0,0,0.3) !important; width: 100%;">
                 <div class="container-fluid pl-5 ml-5">
                     <a class="navbar-brand" href="#">
-                    <i class="fa fa-robot" style="color: green;">
+                    <i class="fa fa-robot" style="color: white;">
                         PHONEEE
                     </i>
                     </a>
@@ -39,7 +39,7 @@
                     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div class="navbar-nav">
                         <a class="nav-link active mx-5 underline_hover" aria-current="page" href="#">Home</a>
-                        <a class="nav-link underline_hover" href="#">Customer Page</a>
+                        <a class="nav-link underline_hover" href="../../customer/view/customer.html">Customer Page</a>
                     </div>
                     </div>
                 </div>
@@ -81,10 +81,27 @@
                   </div>
                   <div class="col-md-4">
                     <!-- BEGIN TÌM KIẾM -->
+                    <div class="sorting mb-2">
+                      <div class="row">
+                        <div class="col-10 pr-1">
+                          <select class="form-control" id="sortList">
+                            <option value="">SORT BY CONDITION</option>
+                            <option value="inc">Sắp xếp tăng dần theo giá</option>
+                            <option value="dec">Sắp xếp giảm dần theo giá</option>
+                          </select>
+                        </div>
+                        <div class="col-2">
+                          <button class="btn btn-success" id="btnSort">Sort</button>
+                        </div>
+                      </div>
+                      
+                      
+                    </div>
                     <div class="input-group mb-3">
                       <input
                         type="text"
                         class="form-control"
+                        id="searchName"
                         placeholder="Nhập từ khóa"
                         aria-label="Recipient's username"
                         aria-describedby="basic-addon2"
@@ -109,6 +126,7 @@
                       <th>IMAGE</th>
                       <th>DESCRIPTION</th>
                       <th>TYPE</th>
+                      <th><i class="fa-solid fa-gear"></i> Action</th>
                     </thead>
                     <tbody id="tblDanhSachSP"></tbody>
                   </table>
@@ -124,7 +142,7 @@
             <!-- The Modal -->
             <div class="modal fade" id="myModal">
               <div class="modal-dialog">
-                <div class="modal-content">
+                <div class="modal-content" id="modal-content">
                   <!-- Modal Header -->
                   <div class="modal-header">
                     <h4 class="modal-title">ADD PHONE</h4>
@@ -133,79 +151,90 @@
                     </button>
                   </div>
                   <!-- Modal body -->
-                  <div class="modal-body">
+                  <div class="modal-body" id="modal-body">
                     <div class="form-group">
                       <label>Phone Name</label>
                       <input
-                        
+                        name="name"
                         id="phoneName"
                         class="form-control"
                         placeholder="Phone Name"
                       />
                     </div>
+                    <span class="thongbao" id="validateName"></span>
                     <div class="form-group">
                       <label>Price</label>
                       <input
-                       
+                       name="price"
                         id="price"
                         class="form-control"
                         placeholder="Price"
                       />
                     </div>
-                    <span id="validatePrice"></span>      
+                    <span class="thongbao" id="validatePrice"></span>      
                     <div class="form-group">
                       <label>Screen</label>
                       <input
-                        
+                        name="screen"
                         id="screen"
                         class="form-control"
                         placeholder="Screen"
                       />
                     </div>
+                    <span class="thongbao" id="validateScreen"></span>
                     <div class="form-group">
                       <label>Back Camera</label>
                       <input
-                       
+                        name="backCamera"
                         id="backCamera"
                         class="form-control"
                         placeholder="Back Camera"
                       />
                     </div>
+                    <span class="thongbao" id="validateBackCamera"></span>
                     <div class="form-group">
                       <label>Front Camera</label>
                       <input
-                        
+                        name="frontCamera"
                         id="frontCamera"
                         class="form-control"
                         placeholder="Front Camera"
                       />
                     </div>
+                    <span class="thongbao" id="validateFrontCamera"></span>
                     <div class="form-group">
                       <label>Image</label>
                       <input
-                       
+                       name="img"
                         id="image"
                         class="form-control"
                         placeholder="Image link"
                       />
                     </div>
+                    <span class="thongbao" id="validateImg"></span>
                     <div class="form-group">
                       <label for="">Brand: </label>
-                      <select class="form-control" id="brand">
-                        <option value="select">Select Brand</option>
+                      <select class="form-control" id="brand" name="type">
+                        <option value="">Select Brand</option>
                         <option value="apple">Iphone</option>
                         <option value="samsung">Samsung</option>
                       </select>
                     </div>
+                    <span class="thongbao" id="validateBrand"></span>
                     <div class="form-group">
                       <label for="">Mô tả </label>
-                      <textarea class="form-control" id="moTaSP">
+                      <textarea class="form-control" id="moTaSP" name="desc">
                         
                       </textarea>
                     </div>
+                    <span class="thongbao" id="validateDesc"></span>
                   </div>
                   <!-- Modal footer -->
-                  <div class="modal-footer" id="modal-footer"></div>
+                  <div class="modal-footer" id="modal-footer">
+                  </div>
+                  <div class="modal-footer" id="footer">
+                      <button class="btn btn-info" id="btnUpdate">UPDATE</button>
+                  </div>
                 </div>
               </div>
             </div>

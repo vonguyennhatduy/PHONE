@@ -1,6 +1,6 @@
 
 
-$text-color: green;
+$text-color: white;
 
 @mixin underline($bg) {
     position: relative;
@@ -26,5 +26,14 @@ $text-color: green;
 .underline_hover {
     color: $text-color !important;
     @include underline($text-color);
+}
+
+.thongbao {
+  color: red !important;
+  margin-bottom: 2px;
+}
+
+body {
+  background: linear-gradient(to left, #8942a8, #ba382f);
 }
 

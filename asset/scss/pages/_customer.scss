@@ -1,64 +1,38 @@
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-}
 
-.underline_hover {
-  color: white !important;
-  position: relative;
-  text-decoration: none;
-  color: inherit;
-}
-.underline_hover::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 1px;
-  width: 0%;
-  height: 2px;
-  background-color: white;
-  transition: width 0.3s ease;
-}
-.underline_hover:hover::before {
-  width: 100%;
-}
+$text-color: white;
 
-.thongbao {
-  color: red !important;
-  margin-bottom: 2px;
-}
-
-body {
-  background: linear-gradient(to left, #8942a8, #ba382f);
+@mixin underlineHover($bg) {
+    position: relative;
+    text-decoration: none;
+    color: inherit;
+  
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 1px; 
+      width: 0%;
+      height: 2px; 
+      background-color: $bg;
+      transition: width 0.3s ease; 
+    }
+  
+    &:hover::before {
+      width: 100%; 
+    }
 }
 
 .underline {
-  color: white !important;
-  position: relative;
-  text-decoration: none;
-  color: inherit;
-}
-.underline::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 1px;
-  width: 0%;
-  height: 2px;
-  background-color: white;
-  transition: width 0.3s ease;
-}
-.underline:hover::before {
-  width: 100%;
+    color: $text-color !important;
+    @include underlineHover($text-color);
 }
 
 #shopCart {
-  color: white;
+  color: $text-color;
 }
 
 .cartAmount {
-  color: white;
+  color: $text-color;
 }
 
 .cart {
@@ -84,37 +58,32 @@ body {
   font-size: 16px;
   gap: 8px;
 }
-
 .fa-minus {
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
-
 .fa-plus {
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
-
 .quantity {
-  font-size: 20px;
+  font-size:20px;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
-
 .shop {
   display: grid;
   grid-template-columns: repeat(4, 223px);
   gap: 30px;
   justify-content: center;
   cursor: default;
+  &:hover {
+    text-decoration: none !important;
+  }
 }
-.shop:hover {
-  text-decoration: none !important;
-}
-
 .col {
   position: relative;
   border: 5px solid black;
@@ -123,7 +92,6 @@ body {
   padding: 0px 20px;
   height: 500px;
 }
-
 .price-quantity {
   display: flex;
   flex-direction: row;
@@ -131,7 +99,6 @@ body {
   bottom: 5px;
   left: 10px;
 }
-
 .buttons {
   border: 1px solid white;
   border-radius: 10px;
@@ -142,14 +109,15 @@ img {
   border-radius: 20px;
   width: 200px;
   height: 200px;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
+  object-fit: cover;
 
+}
 body {
   text-decoration: none !important;
 }
 
 i {
   cursor: pointer;
-}/*# sourceMappingURL=main.css.map */
+}
+
+
