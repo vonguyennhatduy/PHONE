@@ -1,9 +1,15 @@
 
 body {
-    background-image: url(https://shopping-cart-demo2.vercel.app/customer/view/img/bg.jpg);
-    background-size: cover;
-}
+    background: linear-gradient(to left, #8942a8, #ba382f) !important;
+  }
 
 .col-6 {
     transform: translateY(70%);
+}
+p:hover {
+    text-decoration: none;
+}
+
+a {
+    text-decoration: none;
 }
