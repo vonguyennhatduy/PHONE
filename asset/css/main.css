@@ -115,6 +115,16 @@ body {
   text-decoration: none !important;
 }
 
+@media (max-width: 1000px) {
+  .shop {
+    grid-template-columns: repeat(2, 223px);
+  }
+}
+@media (max-width: 500px) {
+  .shop {
+    grid-template-columns: repeat(1, 223px);
+  }
+}
 .col {
   position: relative;
   border: 5px solid black;
