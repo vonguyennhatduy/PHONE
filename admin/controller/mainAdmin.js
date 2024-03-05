@@ -55,8 +55,7 @@ const layThongTinSanPham = () => {
     && validation.checkPhoneName(data.name,'validateName','Sản phẩm phải là Samsung hoặc Iphone');
 
     isValid &= validation.checkEmpty(data.price,'validatePrice','Vui lòng không để trống') 
-    && validation.checkPattern(data.price,'validatePrice',/^\d+$/,'Giá sản phẩm phải là số')
-    && validation.checkRange(data.price,'validatePrice',30000000,'Giá trị sản phẩm không vượt quá 30 triệu đồng');
+    && validation.checkPattern(data.price,'validatePrice',/^\d+$/,'Giá sản phẩm phải là số');
 
     isValid &= validation.checkEmpty(data.screen,'validateScreen','Vui lòng không để trống');
 
@@ -67,7 +66,8 @@ const layThongTinSanPham = () => {
     isValid &= validation.checkEmpty(data.img,'validateImg','Vui lòng không để trống')
 
     isValid &= validation.checkEmpty(data.type,'validateBrand','Vui lòng không để trống')
-    && validation.checkType(data.type,'validateBrand','Sản phẩm phải là Samsung hoặc Iphone');
+    && validation.checkType(data.type,'validateBrand','Sản phẩm phải là Samsung hoặc Iphone')
+    && validation.checkPhoneType(data.name,data.type,'validateBrand','Brand không khớp với tên sản phẩm');
 
     isValid &= validation.checkEmpty(data.desc,'validateDesc','Vui lòng không để trống');
 

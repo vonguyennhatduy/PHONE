@@ -1,0 +1,106 @@
+
+.btnHome {
+    padding: 10px;
+    border-radius: 5px;
+    background-color: green;
+    color: white;
+    cursor: pointer;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+#label {
+    cursor: default !important;
+}
+a:hover {
+    text-decoration: none !important;
+    color: white !important;
+}
+.fa-minus {
+    color: red;
+}
+.fa-plus{
+    color: green;
+}
+
+.buttonsCart {
+    display: flex;
+    flex-direction: row;
+    font-size: 16px;
+    gap: 8px;
+}
+
+.buttonsCart {
+    border: 1px solid white;
+    border-radius: 10px;
+    background-color: black;
+}
+
+.shopping-cart {
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: repeat(1,400px);
+    justify-content: center;
+    gap: 15px;
+
+}
+.cartBill {
+    border: 2px solid #212529;
+    border-radius: 10px;
+    padding: 50px 90px;
+    .buttonsCart {
+        width: 90px;
+        justify-content: space-between;
+    }
+    position: relative;
+}
+
+.imgCartItems {
+    width: 100px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.name-price-x {
+    width: 250px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    position: absolute;
+    top: 2px;
+    right: 15px;
+    gap: 15px;
+    .fa-x {
+        color: black;
+    }
+    .priceProduct {
+        border: 1px solid black;
+        line-height: 40px;
+        color: white;
+        background-color: #212529;
+        border-radius: 10px;
+    }
+}
+
+
+
+.buttonsCart {
+    position: absolute;
+    bottom: 2px;
+    left: 120px;
+}
+
+.totalOfOnePro {
+    font-size: 20px;
+    position: absolute;
+    bottom: 0;
+    left: 220px;
+    color: black;
+}
+
+

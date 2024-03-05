@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>Phone Cart Items</title>
+        <!-- Required meta tags -->
+        <meta charset="utf-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1, shrink-to-fit=no"
+        />
+
+        <link
+        rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous"
+        />
+
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="../../asset/css/main.css">
+    </head>
+
+    <body>
+
+        <header>
+            <nav class="navbar navbar-expand-lg bg-body-tertiary black" style="background-color: rgba(0,0,0,0.3) !important; width: 100%;">
+                <div class="container-fluid pl-5 ml-5">
+                    <a class="navbar-brand" href="#">
+                    <i class="fa fa-robot" style="color: white;">
+                        PHONEEE
+                    </i>
+                    </a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav">
+                        <a class="nav-link active mx-5 underline" aria-current="page" href="#">Home</a>
+                        <a class="nav-link underline" href="../../admin/view/admin.html">Admin Page</a>
+                        <a class="nav-link underline ml-3" href="../../customer/view/customer.html">Customer Page</a>
+                    </div>
+                    </div>
+                    <a href="#">
+                        <div class="cart">
+                            <i class="fa-solid fa-cart-shopping" id="shopCart"></i>
+                            <div class="cartAmount" id="cartAmount">0</div>
+                        </div
+                    </a>
+                </div>
+            </nav>
+        </header>
+
+        <div id="label" class="text-center"></div>
+
+        <div class="shopping-cart text-center" id="shopping-cart"></div>
+
+        <div class="Payment text-center" id="Payment"></div>
+
+        <div class="successPayment text-center" id="successPayment"></div>
+
+
+    </body>
+
+        
+        <script
+            src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"
+        ></script>
+
+        <!-- axios -->
+        <!-- <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script> -->
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.7/axios.min.js" integrity="sha512-NQfB/bDaB8kaSXF8E77JjhHG5PM6XVRxvHzkZiwl3ddWCEPBa23T76MuWSwAJdMGJnmQqM0VeY9kFszsrBEFrQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        
+        <!-- <script type="module" src="../controller/mainCustomer.js"></script> -->
+        <script type="module" src="../controller/cart.js"></script>
+        
+    </body>
+</html>
+

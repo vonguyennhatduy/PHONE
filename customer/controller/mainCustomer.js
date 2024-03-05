@@ -9,14 +9,12 @@ const products = new Products2();
 
 const getElement = (id) => document.getElementById(id);
 // 
-let basket =  JSON.parse(localStorage.getItem("data")) || [];
+let basket = JSON.parse(localStorage.getItem("data")) || [];
 
 const renderTable = (result) => {
     return (getElement('shop').innerHTML = result.map((x) => {
-        let search = basket.find((X) => X.id === x.id) || [];
         return `
             <div class="container">
-
                 <div class="row">
                     <div class="col mx-3 mt-5" width="100%">
                         <div class="item">
@@ -25,11 +23,11 @@ const renderTable = (result) => {
                                 <h3 class="px-2 fs-3">${x.name}</h3>
                                 <p class="px-2">${x.desc}</p>
                                 <div class="price-quantity">
-                                    <h6 class="mr-2 pt-2">${x.price}</h6>
+                                    <h6 class="mr-2 pt-2"><span style="color:yellow;">$</span>${x.price}</h6>
                                     <div class="buttons px-1">
                                         <i class="fa-solid fa-minus" onclick="decrement(${x.id})"></i>
                                         <div class="quantity px-2 fs-2" id="${x.id}">
-                                            ${search.item === undefined ? 0 : search.item}
+                                            ${x.item === undefined ? 0 : x.item}
                                         </div>
                                         <i class="fa-solid fa-plus" onclick="increment(${x.id})"></i>
                                     </div>
@@ -49,7 +47,21 @@ window.getProductsList = () => {
 
     promise 
         .then((result) => {
-            renderTable(result.data);
+           let stored = JSON.parse(localStorage.getItem("data"));
+
+           for(let i = 0; i < result.data.length; i++){
+                let checkID = result.data[i].id * 1;
+                // console.log('tren: ',checkID);
+                for(let j = 0; j < stored.length; j++){
+                    console.log(stored[j].id);
+                    if(stored[j].id === checkID){
+                        result.data[i].item = stored[j].item;
+                    }
+                }
+           }
+
+           renderTable(result.data)
+            
         })
 
         .catch((error) => {
@@ -78,17 +90,15 @@ window.increment = (id) => {
 };
 
 window.decrement = (id) => {
-
     let selectedProduct = id;
     let search = basket.find((x)=> x.id === selectedProduct);
 
     if(search === undefined) return ;
-    else if(search.item === 0) return ;
+    else if(search.item === 0) return;
     else search.item -= 1;
 
     // console.log(basket);
     updateAmountItem(selectedProduct);
-    
     basket = basket.filter((x) => x.item !== 0);
     localStorage.setItem("data",JSON.stringify(basket));
 };
@@ -106,5 +116,3 @@ window.calculation = () => {
 };
 
 calculation();
-
-

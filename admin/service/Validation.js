@@ -32,16 +32,6 @@ export class Validation {
         return true;
     }
 
-    checkRange = (value,ErrorID,limit,message) => {
-        if(value > limit){
-            document.getElementById(ErrorID).innerHTML = message;
-            return false;
-        }
-
-        document.getElementById(ErrorID).innerHTML = '';
-        return true;
-    }
-
     checkPattern = (value,ErrorID,pattern,message) => {
         if(pattern.test(value)){
             document.getElementById(ErrorID).innerHTML = '';
@@ -51,5 +41,15 @@ export class Validation {
         return false;
     }
 
+    checkPhoneType = (val1,val2,ErrorID,message) => {
+        let Name = val1.toLowerCase();
+        let Brand = val2;
+        if((/samsung/i.test(Name) && Brand === 'samsung') || (/iphone/i.test(Name) && Brand === 'apple')){
+            document.getElementById(ErrorID).innerHTML = '';
+            return true;
+        }
+        document.getElementById(ErrorID).innerHTML = message;
+        return false;
+    }
 
 }
