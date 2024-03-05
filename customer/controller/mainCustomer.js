@@ -47,18 +47,19 @@ window.getProductsList = () => {
 
     promise 
         .then((result) => {
-           let stored = JSON.parse(localStorage.getItem("data"));
-
-           for(let i = 0; i < result.data.length; i++){
-                let checkID = result.data[i].id * 1;
-                // console.log('tren: ',checkID);
-                for(let j = 0; j < stored.length; j++){
-                    console.log(stored[j].id);
-                    if(stored[j].id === checkID){
-                        result.data[i].item = stored[j].item;
-                    }
+            let stored = JSON.parse(localStorage.getItem("data"));
+            if(stored){
+                for(let i = 0; i < result.data.length; i++){
+                        let checkID = result.data[i].id * 1;
+                        // console.log('tren: ',checkID);
+                        for(let j = 0; j < stored.length; j++){
+                            console.log(stored[j].id);
+                            if(stored[j].id === checkID){
+                                result.data[i].item = stored[j].item;
+                            }
+                        }
                 }
-           }
+            }
 
            renderTable(result.data)
             
