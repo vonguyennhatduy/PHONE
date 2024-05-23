@@ -72,7 +72,7 @@ $text-color: white;
   font-size:20px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  align-items: center;
 }
 .shop {
   display: grid;
@@ -107,10 +107,15 @@ $text-color: white;
 }
 .price-quantity {
   display: flex;
-  flex-direction: row;
-  position: absolute;
-  bottom: 5px;
-  left: 10px;
+  flex-direction: column;
+  align-items: center;
+
+  // position: absolute;
+  // bottom: 5px;
+  // left: 10px;
+}
+.price-tag {
+  margin: 0 !important;
 }
 .buttons {
   border: 1px solid white;
@@ -132,5 +137,7 @@ body {
 i {
   cursor: pointer;
 }
+
+
 
 

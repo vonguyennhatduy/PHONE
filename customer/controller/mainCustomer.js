@@ -22,9 +22,10 @@ const renderTable = (result) => {
                             <div class="details text-white mt-2">
                                 <h3 class="px-2 fs-3">${x.name}</h3>
                                 <p class="px-2">${x.desc}</p>
+
                                 <div class="price-quantity">
-                                    <h6 class="mr-2 pt-2"><span style="color:yellow;">$</span>${x.price}</h6>
-                                    <div class="buttons px-1">
+                                    <h6 class="price-tag mt-1 mr-2"><span style="color:yellow;">$</span>${x.price}</h6>
+                                    <div class="buttons">
                                         <i class="fa-solid fa-minus" onclick="decrement(${x.id})"></i>
                                         <div class="quantity px-2 fs-2" id="${x.id}">
                                             ${x.item === undefined ? 0 : x.item}
@@ -32,6 +33,8 @@ const renderTable = (result) => {
                                         <i class="fa-solid fa-plus" onclick="increment(${x.id})"></i>
                                     </div>
                                 </div>
+
+
                             </div>
                         </div>
                     </div>

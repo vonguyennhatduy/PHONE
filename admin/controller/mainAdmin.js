@@ -90,7 +90,7 @@ const layThongTinSanPham = () => {
 getElement('btnThemSP').onclick = () => {
     console.log('thêm sản phẩm');
     getElement('modal-footer').innerHTML = `
-        <button class="btn btn-success" onclick="addPhone()">
+        <button class="btn btn-success" data-dismiss="modal" onclick="addPhone()">
             ADD
         </button>
     `
