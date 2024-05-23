@@ -90,7 +90,7 @@ const layThongTinSanPham = () => {
 getElement('btnThemSP').onclick = () => {
     console.log('thêm sản phẩm');
     getElement('modal-footer').innerHTML = `
-        <button class="btn btn-success" data-dismiss="modal" onclick="addPhone()">
+        <button class="btn btn-success Close" onclick="addPhone()">
             ADD
         </button>
     `
@@ -115,6 +115,21 @@ const getPhoneList = () => {
 
 getPhoneList();
 
+
+const resetForm = () => {
+    document.getElementById('phoneName').value = '';
+    document.getElementById('price').value = '';
+    document.getElementById('screen').value = '';
+    document.getElementById('backCamera').value = '';
+    document.getElementById('frontCamera').value = '';
+    document.getElementById('image').value = '';
+    document.getElementById('brand').value = '';
+    document.getElementById('moTaSP').value = '';
+
+    // Đóng modal
+    $('#myModal').modal('hide');
+}
+
 // thêm sản phẩm 
 
 window.addPhone = () => {
@@ -135,7 +150,10 @@ window.addPhone = () => {
             .catch((error) => {
                 console.log('error: ', error);
             })
+        
+        resetForm();
     }
+    
 }
 
 // xóa sản phẩm 
@@ -208,6 +226,8 @@ getElement('btnUpdate').onclick = () =>  {
         .catch((error) => {
             console.log('error: ',error);
         })
+    
+    resetForm();
 }
 
 // tìm kiếm sản phẩm theo tên 
